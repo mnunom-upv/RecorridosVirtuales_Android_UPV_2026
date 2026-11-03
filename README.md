@@ -1,6 +1,6 @@
 # RecorridosVirtuales_Android_UPV_2026
 
-| Archivo | Demo | Descripcion | Comentarios de Navegabilidad | Comentarios de Apariencia |
+| Archivo | Demo | Descripción | Comentarios de Navegabilidad | Comentarios de Apariencia |
 | ---------- |----------|----------|----------|----------|
 | iti-271503_eq_01_u2.apk | UPV (java)  | Completo (6 edificios) - vision binocular | Limitada (Adelante y atras) - Segunda planta | Completa - Faltan detalles menores|
 | iti-271503_eq_02_u2.apk | Museo Regional de Historia  (java)| Completo  - vision binocular | Row 2-3  |----------|
