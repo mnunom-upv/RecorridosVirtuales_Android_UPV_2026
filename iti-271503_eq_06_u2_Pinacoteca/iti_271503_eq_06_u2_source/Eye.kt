@@ -1,0 +1,41 @@
+package upv.pm.may_ago_26.iti_271503.pgu2_eq06
+
+import kotlin.concurrent.Volatile
+
+class Eye(val type: Int) {
+
+    val eyeView: FloatArray = FloatArray(16)
+    val viewport: Viewport = Viewport()
+    val fov: FieldOfView = FieldOfView()
+
+    @Volatile
+    private var mProjectionChanged: Boolean = true
+
+    private var mPerspective: FloatArray = FloatArray(16)
+    private var mLastZNear = 0f
+    private var mLastZFar = 0f
+
+    fun getPerspective(zNear: Float, zFar: Float): FloatArray {
+        if (!mProjectionChanged && mLastZNear == zNear && mLastZFar == zFar) {
+            return mPerspective
+        }
+
+        fov.toPerspectiveMatrix(zNear, zFar, mPerspective, 0)
+
+        mLastZNear = zNear
+        mLastZFar = zFar
+        mProjectionChanged = false
+
+        return mPerspective
+    }
+
+    fun setProjectionChanged() {
+        mProjectionChanged = true
+    }
+
+    object Type {
+        const val MONOCULAR: Int = 0
+        const val LEFT: Int = 1
+        const val RIGHT: Int = 2
+    }
+}

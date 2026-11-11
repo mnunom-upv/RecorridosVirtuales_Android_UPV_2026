@@ -1,0 +1,197 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{none/global//global/global/global}
+  \entry{Simon2010}{book}{}{}
+    \name{author}{1}{}{%
+      {{hash=SN}{%
+         family={Simon},
+         familyi={S\bibinitperiod},
+         given={Nina},
+         giveni={N\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Museum 2.0}%
+    }
+    \strng{namehash}{SN1}
+    \strng{fullhash}{SN1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{The Participatory Museum}
+    \field{year}{2010}
+  \endentry
+
+  \entry{nasa_3d_resources}{misc}{}{}
+    \field{labeltitlesource}{title}
+    \field{howpublished}{\burl{https://science.nasa.gov/3d-resources/}}
+    \field{note}{{{Consultado el \specialdate\today}}}
+    \field{title}{{NASA 3D Resources}}
+  \endentry
+
+  \entry{smithsonian_educator_tools}{misc}{}{}
+    \field{labeltitlesource}{title}
+    \field{howpublished}{\burl{https://3d.si.edu/educator-tools}}
+    \field{note}{{{Consultado el \specialdate\today}}}
+    \field{title}{{Educator Tools | Smithsonian 3D}}
+  \endentry
+
+  \entry{Fraknoi2022}{book}{}{}
+    \name{author}{3}{}{%
+      {{hash=FA}{%
+         family={Fraknoi},
+         familyi={F\bibinitperiod},
+         given={Andrew},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=MD}{%
+         family={Morrison},
+         familyi={M\bibinitperiod},
+         given={David},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=WSC}{%
+         family={Wolff},
+         familyi={W\bibinitperiod},
+         given={Sidney\bibnamedelima C.},
+         giveni={S\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {OpenStax}%
+    }
+    \strng{namehash}{FAMDWSC1}
+    \strng{fullhash}{FAMDWSC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Astronomy 2e}
+    \field{year}{2022}
+  \endentry
+
+  \entry{Loy2005}{book}{}{}
+    \name{author}{3}{}{%
+      {{hash=LM}{%
+         family={Loy},
+         familyi={L\bibinitperiod},
+         given={Marc},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=NP}{%
+         family={Niemeyer},
+         familyi={N\bibinitperiod},
+         given={Patrick},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=LD}{%
+         family={Leuck},
+         familyi={L\bibinitperiod},
+         given={Daniel},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {O'Reilly Media}%
+    }
+    \strng{namehash}{LMNPLD1}
+    \strng{fullhash}{LMNPLD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Learning Java}
+    \field{year}{2005}
+  \endentry
+
+  \entry{khronos_opengles}{misc}{}{}
+    \field{labeltitlesource}{title}
+    \field{howpublished}{\burl{https://www.khronos.org/opengles/}}
+    \field{note}{{{Consultado el \specialdate\today}}}
+    \field{title}{{OpenGL ES}}
+  \endentry
+
+  \entry{Ginsburg2014}{book}{}{}
+    \name{author}{4}{}{%
+      {{hash=GD}{%
+         family={Ginsburg},
+         familyi={G\bibinitperiod},
+         given={Dan},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=PB}{%
+         family={Purnomo},
+         familyi={P\bibinitperiod},
+         given={Budirijanto},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=SD}{%
+         family={Shreiner},
+         familyi={S\bibinitperiod},
+         given={Dave},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=MA}{%
+         family={Munshi},
+         familyi={M\bibinitperiod},
+         given={Aaftab},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Pearson}%
+    }
+    \strng{namehash}{GD+1}
+    \strng{fullhash}{GDPBSDMA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{OpenGL ES 3.0 Programming Guide}
+    \field{year}{2014}
+  \endentry
+
+  \entry{android_opengl}{misc}{}{}
+    \field{labeltitlesource}{title}
+  \field{howpublished}{\burl{https://developer.android.com/develop/ui/views/graphics/opengl?hl=es-419}}
+    \field{note}{{{Consultado el \specialdate\today}}}
+    \field{title}{{Gráficos 3D con OpenGL ES}}
+  \endentry
+
+  \entry{learnopengl}{misc}{}{}
+    \field{labeltitlesource}{title}
+    \field{howpublished}{\burl{https://learnopengl.com}}
+    \field{note}{{{Consultado el \specialdate\today}}}
+    \field{title}{{LearnOpenGL}}
+  \endentry
+
+  \entry{LaValle2017}{book}{}{}
+    \name{author}{1}{}{%
+      {{hash=LSM}{%
+         family={LaValle},
+         familyi={L\bibinitperiod},
+         given={Steven\bibnamedelima M.},
+         giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Cambridge University Press}%
+    }
+    \strng{namehash}{LSM1}
+    \strng{fullhash}{LSM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Virtual Reality}
+    \field{year}{2017}
+  \endentry
+\enddatalist
+\endinput

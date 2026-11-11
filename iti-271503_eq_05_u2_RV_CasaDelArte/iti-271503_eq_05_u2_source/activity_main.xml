@@ -1,0 +1,41 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <upv.pm.may_ago_26.iti_271503.pgu2_eq05.CardboardView
+        android:id="@+id/cardboard_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <upv.pm.may_ago_26.iti_271503.pgu2_eq05.CardboardOverlayView
+        android:id="@+id/overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- txt encima -->
+    <TextView
+        android:id="@+id/welcomeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="140dp"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        android:background="#80000000"
+        android:text="Casa del Arte Recorrido virtual\nPulse el boton de pausa para ver los controles"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp" />
+
+    <!-- txt controles -->
+    <TextView
+        android:id="@+id/pauseText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        android:background="#80000000"
+        android:text="\nCONTROLES\n\nA = Descender\nY = Ascender\nX = Reiniciar\nB = Salir\n\nDesarrolladores: Axel Rodriguez, Miguel Sandoval\n\n"
+        android:textColor="#FFFFFF"
+        android:visibility="gone"
+        android:textSize="24sp" />
+
+</FrameLayout>

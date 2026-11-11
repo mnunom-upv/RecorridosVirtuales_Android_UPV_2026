@@ -1,0 +1,264 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{none/global//global/global/global}
+  \entry{sherman2018understanding}{book}{}{}
+    \name{author}{2}{}{%
+      {{hash=SWR}{%
+         family={Sherman},
+         familyi={S\bibinitperiod},
+         given={William\bibnamedelima R.},
+         giveni={W\bibinitperiod\bibinitdelim R\bibinitperiod},
+      }}%
+      {{hash=CAB}{%
+         family={Craig},
+         familyi={C\bibinitperiod},
+         given={Alan\bibnamedelima B.},
+         giveni={A\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Morgan Kaufmann}%
+    }
+    \strng{namehash}{SWRCAB1}
+    \strng{fullhash}{SWRCAB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{edition}{2}
+    \field{title}{Understanding Virtual Reality: Interface, Application, and
+  Design}
+    \list{location}{1}{%
+      {Cambridge, MA}%
+    }
+    \field{year}{2018}
+  \endentry
+
+  \entry{lavalle2023vr}{book}{}{}
+    \name{author}{1}{}{%
+      {{hash=LSM}{%
+         family={LaValle},
+         familyi={L\bibinitperiod},
+         given={Steven\bibnamedelima M.},
+         giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Cambridge University Press}%
+    }
+    \strng{namehash}{LSM1}
+    \strng{fullhash}{LSM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Virtual Reality}
+    \list{location}{1}{%
+      {Cambridge, UK}%
+    }
+    \field{year}{2023}
+  \endentry
+
+  \entry{android2024motionsensors}{online}{}{}
+    \name{author}{1}{}{%
+      {{hash=G}{%
+         family={{Google}},
+         familyi={G\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{G1}
+    \strng{fullhash}{G1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Motion Sensors --- Android Developers}
+    \verb{url}
+    \verb https://developer.android.com/develop/sensors-and-location/sensors/se
+    \verb nsors_motion
+    \endverb
+    \field{year}{2024}
+    \field{urlday}{05}
+    \field{urlmonth}{07}
+    \field{urlyear}{2026}
+  \endentry
+
+  \entry{googlecardboardsdk}{online}{}{}
+    \name{author}{1}{}{%
+      {{hash=G}{%
+         family={{Google LLC}},
+         familyi={G\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{G2}
+    \strng{fullhash}{G2}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Google VR SDK for Android (Cardboard)}
+    \verb{url}
+    \verb https://github.com/googlevr/gvr-android-sdk
+    \endverb
+    \field{year}{2019}
+    \field{urlday}{05}
+    \field{urlmonth}{07}
+    \field{urlyear}{2026}
+  \endentry
+
+  \entry{khronosopengles}{online}{}{}
+    \name{author}{1}{}{%
+      {{hash=K}{%
+         family={{Khronos Group}},
+         familyi={K\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{K1}
+    \strng{fullhash}{K1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{OpenGL ES 2.0 Specification}
+    \verb{url}
+    \verb https://www.khronos.org/registry/OpenGL/specs/es/2.0/es_full_spec_2.0
+    \verb .pdf
+    \endverb
+    \field{year}{2010}
+    \field{urlday}{05}
+    \field{urlmonth}{07}
+    \field{urlyear}{2026}
+  \endentry
+
+  \entry{androidopenglprimer}{online}{}{}
+    \name{author}{1}{}{%
+      {{hash=A}{%
+         family={{Android Developers}},
+         familyi={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{A1}
+    \strng{fullhash}{A1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{OpenGL ES}
+    \verb{url}
+    \verb https://developer.android.com/develop/ui/views/graphics/opengl
+    \endverb
+    \field{year}{2023}
+    \field{urlday}{05}
+    \field{urlmonth}{07}
+    \field{urlyear}{2026}
+  \endentry
+
+  \entry{khronos2010gles2}{report}{}{}
+    \name{author}{1}{}{%
+      {{hash=K}{%
+         family={{Khronos Group}},
+         familyi={K\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{K1}
+    \strng{fullhash}{K1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{OpenGL {ES} Common Profile Specification, Version 2.0}
+    \list{institution}{1}{%
+      {Khronos Group}%
+    }
+    \field{type}{techreport}
+    \field{year}{2010}
+  \endentry
+
+  \entry{androidgamecontrollers}{online}{}{}
+    \name{author}{1}{}{%
+      {{hash=A}{%
+         family={{Android Developers}},
+         familyi={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{A1}
+    \strng{fullhash}{A1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Handle Controller Actions}
+    \verb{url}
+    \verb https://developer.android.com/training/game-controllers/controller-in
+    \verb put
+    \endverb
+    \field{year}{2023}
+    \field{urlday}{05}
+    \field{urlmonth}{07}
+    \field{urlyear}{2026}
+  \endentry
+
+  \entry{munshi2008opengles}{book}{}{}
+    \name{author}{3}{}{%
+      {{hash=MA}{%
+         family={Munshi},
+         familyi={M\bibinitperiod},
+         given={Aaftab},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=GD}{%
+         family={Ginsburg},
+         familyi={G\bibinitperiod},
+         given={Dan},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=SD}{%
+         family={Shreiner},
+         familyi={S\bibinitperiod},
+         given={Dave},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Addison-Wesley}%
+    }
+    \strng{namehash}{MAGDSD1}
+    \strng{fullhash}{MAGDSD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{OpenGL {ES} 2.0 Programming Guide}
+    \list{location}{1}{%
+      {Boston, MA}%
+    }
+    \field{year}{2008}
+  \endentry
+
+  \entry{slater1997five}{article}{}{}
+    \name{author}{2}{}{%
+      {{hash=SM}{%
+         family={Slater},
+         familyi={S\bibinitperiod},
+         given={Mel},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=WS}{%
+         family={Wilbur},
+         familyi={W\bibinitperiod},
+         given={Sylvia},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SMWS1}
+    \strng{fullhash}{SMWS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{6}
+    \field{pages}{603\bibrangedash 616}
+    \field{title}{A Framework for Immersive Virtual Environments ({FIVE}):
+  Speculations on the Role of Presence in Virtual Environments}
+    \field{volume}{6}
+    \field{journaltitle}{Presence: Teleoperators and Virtual Environments}
+    \field{year}{1997}
+  \endentry
+\enddatalist
+\endinput

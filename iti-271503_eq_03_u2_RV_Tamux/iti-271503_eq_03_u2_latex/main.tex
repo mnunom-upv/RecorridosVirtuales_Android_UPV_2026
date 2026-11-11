@@ -1,0 +1,197 @@
+%%
+% La siguiente plantilla esta basada en el siguiente enlace:
+% http://academic.reed.edu/physics/courses/Physics332.s08/reports.html
+% La plantilla original puede descargarse de ese sitio
+% Se dejo parte del texto original en inglés para ilustar el uso de la plantilla
+% Se hicieron algunas modificaciones para ajustar el idioma y otros detalles para 
+% completar un reporte técnico breve pero muy puntual
+% Modificación Inicial: Marco Aurelio Nuno Maganda - 11/SEP/2014
+% 
+% Enlace a la documentación del tipo de documento base (revtex4)
+% http://mirror.hmc.edu/ctan/macros/latex/contrib/revtex/doc/latex/revtex/source/revtex4-1.pdf
+%
+% En algunas distribuciones es necesario instalar el paquete texlive-publishers
+%
+%\documentclass[letterpaper,aps,twocolumn,pre,nofootinbib]{revtex4}
+%\documentclass[twocolumn]{article}
+\documentclass[conference]{IEEEtran}
+
+\usepackage[spanish]{babel}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{graphicx}
+%\usepackage{bbm}
+\usepackage[utf8]{inputenc} % Caracteres en Español (Acentos, ñs)
+\usepackage{url} % ACENTOS
+\usepackage{hyperref} % Referencias
+\usepackage{subfig}
+\usepackage{lipsum}
+\usepackage{balance}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PARCHE PARA ELIMINAR LA FECHA DEL DOCUMENTO
+% 
+\usepackage{etoolbox}
+\makeatletter
+% \frontmatter@RRAP@format is responsible for the parentheses
+\patchcmd{\frontmatter@RRAP@format}{(}{}{}{}
+\patchcmd{\frontmatter@RRAP@format}{)}{}{}{}
+%\renewcommand\Dated@name{}
+\makeatother	
+% FIN DEL PARCHE
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PARCHE PARA PERMIRIR UTILIZAR BIBLATEX EN ESTA PANTLLA
+%\PassOptionsToPackage{square,numbers}{natbib}
+%\RequirePackage{natbib}  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[backend=bibtex,sorting=none]{biblatex}
+% Estas lineas permiten romper los hipervinculos muy largos !!!!
+\setcounter{biburllcpenalty}{7000}
+\setcounter{biburlucpenalty}{8000}
+\addbibresource{references.bib}
+
+% Actualiza en automático la fecha de las citas de internet a la fecha de la compilación del documento
+\usepackage{datetime}
+\newdateformat{specialdate}{\twodigit{\THEDAY}-\twodigit{\THEMONTH}-\THEYEAR}
+\date{\specialdate\today}
+
+% la sentencia \burl en las citas... 
+\usepackage[hyphenbreaks]{breakurl}
+
+\renewcommand\spanishtablename{Tabla}
+\renewcommand\spanishfigurename{Figura}
+
+%\usepackage{datetime}
+%\newdateformat{specialdate}{\twodigit{\THEDAY}-\twodigit{\THEMONTH}-\THEYEAR}
+%\newdateformat{specialdate}{\twodigit{\THEDAY}-\THEYEAR}
+%\date{\specialdate\today}
+
+
+\begin{document}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% Definitions
+	%
+	%
+	% Define your special symbols here
+	%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	% use to set width of figures
+	\newcommand{\breite}{1.0} %  for twocolumn
+	\newcommand{\RelacionFiguradoscolumnas}{0.9}
+	\newcommand{\RelacionFiguradoscolumnasPuntoCinco}{0.45}
+	
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% End Definitions
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	
+	%Title of paper
+	\title{Simulación móvil interactiva para el Museo Tamux}
+	
+	% Trabajo Individual
+	%\author{\IEEEauthorblockN{Marco Aurelio Nuno-Maganda\IEEEauthorrefmark{1}}
+		% En caso de trabajos en equipo, poner a todos los autores en estricto ORDEN ALFABETICO
+		\author{\IEEEauthorblockN{Alvarado Tovar Joshua André\IEEEauthorrefmark{1}, \\
+				Manzano Ceja Juan Antonio\IEEEauthorrefmark{1}, 
+				Puente Cruz Edgar Eduardo\IEEEauthorrefmark{1}, 
+				Rodriguez Resendiz Manuel Alejandro\IEEEauthorrefmark{1} y \\
+				Zavala Mata Emmanuel \IEEEauthorrefmark{1}}
+			\IEEEauthorblockA{\IEEEauthorrefmark{1}Ingeniería en Tecnologías de la Información\\
+				Universidad Politécnica de Victoria}
+		}
+		
+		
+		%\date{}
+		
+		\maketitle
+		
+		\begin{abstract} 
+			Debido a las barreras geográficas que limitan el acceso a los espacios culturales, resulta necesario implementar alternativas tecnológicas para facilitar las visitas a distancia. En este trabajo se propone una aplicación móvil de realidad virtual que recrea de manera tridimensional e interactiva la Sala del Universo del Museo Tamux. El sistema se programó en Java, integrando un control físico para el desplazamiento y el giroscopio del dispositivo para gestionar la orientación visual. Como resultado, se logró un recorrido completamente inmersivo y fluido, ofreciendo una respuesta precisa e inmediata a los movimientos del usuario.
+			
+		\end{abstract}
+		
+		
+		%\maketitle must follow title, authors, abstract, \pacs, and \keywords
+		
+		
+		
+		
+		\section{Introducción}
+		El acceso a las instituciones culturales frecuentemente se encuentra limitado por barreras geográficas que dificultan la visita presencial del público. En el caso de los conceptos de astronomía, estos resultan complejos de asimilar mediante muestras físicas convencionales que no logran transmitir adecuadamente la vasta magnitud del cosmos. Esta situación genera una brecha significativa en la divulgación científica moderna.
+		
+		El Museo de Historia Natural de Tamaulipas (Tamux) exhibe en su primera sala temáticas fundamentales sobre el origen y la evolución del universo. Sin embargo, los esquemas tradicionales del museo requieren una actualización tecnológica para lograr captar el interés de las nuevas generaciones habituadas a los entornos digitales. La falta de interactividad disminuye el impacto educativo de este importante espacio.
+		
+		Para dar solución a esta problemática, el presente proyecto desarrolla una simulación inmersiva de realidad virtual enfocada de manera exclusiva en la Sala del Universo. Esta herramienta tecnológica transforma un teléfono inteligente convencional en una ventana interactiva que recrea fielmente el entorno original del museo. Con esta innovación, se elimina la necesidad de encontrarse físicamente dentro de las instalaciones.
+		
+		La aplicación se encuentra desarrollada mediante el lenguaje Java y el motor gráfico OpenGL ES para asegurar un rendimiento visual sumamente fluido. El sistema integra un visor de realidad virtual y un control físico tipo joystick para lograr un desplazamiento intuitivo por el entorno. Así, el usuario obtiene una experiencia educativa vanguardista, altamente accesible y muy fácil de utilizar.
+		
+		
+		
+		
+		\section{Desarrollo Experimental}
+		En este trabajo se creó una aplicación de realidad virtual para recrear en 3D la Sala del Universo del Museo Tamux. Para lograrlo, se consultaron diversas fuentes sobre cómo hacer más modernos y atractivos los museos \cite{Simon2010}. Durante la investigación, se descubrió que algunas agencias científicas ofrecen figuras tridimensionales gratuitas para el público \cite{nasa_3d_resources}, y que otros espacios culturales ya están usando la tecnología para ofrecer recorridos interactivos \cite{smithsonian_educator_tools}. También se consultaron libros de astronomía para asegurar que la representación visual del espacio y los astros dentro de la sala tuviera coherencia y fuera fiel a la realidad \cite{Fraknoi2022}. Sin embargo, revisando los sistemas existentes, se notó que ninguno había resuelto el problema de ofrecer una inmersión museográfica completa a través de un dispositivo móvil de manera eficiente, limitándose a visualizaciones en pantallas tradicionales.
+		
+		Una vez analizadas tales implementaciones, se decidió proponer un sistema que supere el nivel de inmersión de las opciones anteriores mediante una simulación interactiva. El sistema lógico y la arquitectura de la aplicación fueron programados utilizando Java como lenguaje de programación \cite{Loy2005}. Para asegurar que las formas en 3D y los colores se mostraran de forma fluida en un teléfono inteligente, se utilizó una tecnología gráfica especial para dispositivos móviles \cite{khronos_opengles}. La creación de estas figuras y de su apariencia visual se realizó siguiendo los manuales oficiales de dicha herramienta \cite{Ginsburg2014}.
+		
+		Con el fin de incrementar el nivel de realismo dentro de la simulación, se implementaron texturas de fondo detalladas en los muros y cielorrasos del escenario virtual, recreando de mejor forma la profundidad y la iluminación característica del entorno espacial. Asimismo, para enriquecer la interactividad dentro de la interfaz de usuario, se integraron tres botones principales de control: el primero permite cambiar dinámicamente a una perspectiva táctil en tercera/primera persona denominada modo Minecraft; el segundo conmuta la visualización al modo VR estereoscópico para visores de realidad virtual; y el tercero actúa como un acceso directo de teletransportación que reubica de forma inmediata la cámara en la posición inicial de la sala principal.
+		
+		Para acoplar estos gráficos con la pantalla del teléfono, se aprovecharon las herramientas oficiales proporcionadas por el sistema operativo \cite{android_opengl}. Para lograr que el usuario pueda moverse por la sala como si estuviera caminando de verdad, se utilizaron fórmulas matemáticas que controlan cómo se comporta la visión dentro del entorno virtual \cite{learnopengl}. Finalmente, el efecto tridimensional necesario para los lentes de realidad virtual se logró separando la imagen renderizada en dos mitades simétricas, imitando de esta forma la distancia natural entre los ojos humanos \cite{LaValle2017}. El funcionamiento continuo de este sistema, desde la lectura de los controles hasta la proyección de la imagen final, opera tal como se observa en el diagrama de flujo de la figura \ref*{fig:diagrama_flujo}.
+		
+		\begin{figure}
+			\includegraphics*[width=\breite \columnwidth]{diagrama_flujo} 
+			\caption{Diagrama de flujo del sistema de control y renderizado.}
+			\label{fig:diagrama_flujo}
+		\end{figure}
+		
+		Para implementar la simulación y compilar el código, se utilizó un entorno de desarrollo basado en el sistema operativo Windows 11, respaldado por un procesador AMD Ryzen 9 6900HX a 3.3 GHz y 16 GB de memoria RAM, garantizando la fluidez en la carga de los modelos geométricos. El dispositivo móvil donde se hizo la prueba funcional fue un teléfono inteligente Google Pixel 10 Pro, el cual cuenta con un procesador Tensor G5, 16 GB de memoria RAM y una pantalla OLED de 120 Hz, además de estar equipado con el sensor de giroscopio necesario. Este equipo fue enlazado vía Bluetooth a un control físico tipo \textit{joystick} para gestionar el desplazamiento. La evaluación del sistema se realizó midiendo la cantidad de cuadros por segundo (FPS) generados por la aplicación, la correcta respuesta de la altura ante las colisiones con el suelo, y la sincronización de la cámara con el giroscopio, asegurando así un recorrido visual fluido y libre de latencia para el usuario.
+		
+		
+		\section{Resultados}
+		El recorrido virtual inicia en el vestíbulo, un espacio arquitectónico diseñado para recibir al usuario y situarlo de inmediato dentro del entorno digital. Esta área funciona como el punto de partida de la simulación, destacando por el uso de texturas específicas en el suelo y de fondo que buscan replicar con mayor realismo la estética original del museo. Su amplitud y diseño despejado cumplen una función introductoria, permitiendo al visitante familiarizarse con la sensibilidad del control físico, la respuesta del giroscopio y los botones de la interfaz antes de adentrarse en las zonas de exhibición, tal como se observa en la Figura \ref{fig:imagen_lobby}.
+		
+		\begin{figure}
+			\includegraphics*[width=\breite \columnwidth]{imagen_lobby} 
+			\caption{Vista general del vestíbulo principal.}
+			\label{fig:imagen_lobby}
+		\end{figure}
+		
+		Para avanzar hacia el área temática, el usuario debe atravesar una zona de transición conformada en su mayor parte por un conjunto de escaleras, tal como se aprecia en la Figura \ref{fig:imagen_pasillo}. Este trayecto conecta el nivel inicial con la exposición principal, guiando visualmente al visitante mediante estructuras resaltadas en colores cálidos y texturas de fondo ambiental. El desplazamiento a través de esta sección pone a prueba el motor de físicas de la aplicación, ya que el sistema calcula constantemente las colisiones para asegurar que la cámara se eleve de manera realista y suave al subir cada uno de los escalones.
+		
+		\begin{figure}
+			\includegraphics*[width=\breite \columnwidth]{imagen_pasillo} 
+			\caption{Zona de transición y escaleras.}
+			\label{fig:imagen_pasillo}
+		\end{figure}
+		
+		Finalmente, el trayecto desemboca en la Sala del Universo, el espacio central y más importante de la simulación, tal como se ilustra en la Figura \ref{fig:imagen_sala1}. En esta área se encuentran desplegados diversos modelos tridimensionales que representan a los planetas y otros cuerpos celestes del sistema solar sobre un fondo espacial texturizado. La distribución espacial de estos astros está diseñada para aprovechar al máximo la interfaz interactiva: mediante los tres botones implementados, el usuario puede alternar entre la vista libre estilo Minecraft y la proyección estereoscópica en modo VR, o presionar el botón de retorno para regresar instantáneamente al punto de partida de la sala principal, cumpliendo así el objetivo principal de divulgación interactiva y visual del proyecto.
+		
+		\begin{figure}
+			\includegraphics*[width=\breite \columnwidth]{imagen_sala1} 
+			\caption{Exhibición en la Sala del Universo.}
+			\label{fig:imagen_sala1}
+		\end{figure}
+		
+		
+		\section{Conclusión}
+		En este trabajo se presenta una solución interactiva para disminuir las barreras de distancia del Museo Tamux mediante una simulación en realidad virtual. Dicha propuesta recrea de manera tridimensional la Sala del Universo utilizando el lenguaje de programación Java y el motor de desarrollo gráfico OpenGL ES. La meta principal se centró en ofrecer un recorrido inmersivo que simula la presencia del usuario dentro del entorno digital.
+		
+		Para lograr el objetivo, se realizó una búsqueda exhaustiva en internet sobre aplicaciones móviles similares y se analizaron las guías de desarrollo gráfico oficiales. De igual manera, se realizó una visita presencial a las instalaciones del museo para conocer de primera mano la arquitectura y la distribución real de la exhibición. Con toda la información recopilada en el sitio, se estructuró un diseño virtual adaptado fielmente al espacio físico.
+		
+		Este modelo tridimensional fue implementado y compilado en una computadora con sistema operativo Windows 11 y un procesador AMD Ryzen 9. Posteriormente, la aplicación se ejecutó de forma nativa en un teléfono inteligente Google Pixel 10 Pro, aprovechando su pantalla de alta velocidad para mostrar la vista dividida y vinculando un control físico inalámbrico para gestionar las caminatas por el entorno.
+		
+		Los resultados obtenidos demostraron un excelente desempeño técnico, logrando un desplazamiento fluido y un rastreo preciso del movimiento de la cabeza a través del giroscopio. Es importante destacar que la simulación cumple un propósito strictly visual y de exploración espacial, sin actuar como una fuente de información científica o teórica textual. Finalmente, el proyecto valida la efectividad de la tecnología móvil actual para la divulgación cultural.
+		
+		
+		\addcontentsline{toc}{section}{Referencias} 
+		\printbibliography
+		%\balance
+		
+		
+		
+	\end{document}
